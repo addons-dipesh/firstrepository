@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+<modules>
+    <Microsoft_Configviewer>
+        <active>true</active>
+        <codepool>local</codepool>
+    </Microsoft_Configviewer>
+</modules>
+</config>

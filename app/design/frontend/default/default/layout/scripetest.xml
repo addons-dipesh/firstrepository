@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    </default>
+    <scripetest_index_index>
+        <reference name="content">
+            <block type="scripetest/scripetest" name="scripetest" template="scripetest/scripetest.phtml" />
+        </reference>
+    </scripetest_index_index>
+</layout> 

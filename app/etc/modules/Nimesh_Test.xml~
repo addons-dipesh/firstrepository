@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Nimesh_Test>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Nimesh_Test>
+    </modules>
+</config>

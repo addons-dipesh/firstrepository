@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category   Rest
+ * @package    Rest_Otp
+ * @author     ModuleCreator
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config>
+    <modules>
+        <Rest_Otp>
+            <version>0.1.0</version>
+        </Rest_Otp>
+    </modules>
+    <frontend>
+        <routers>
+            <otp>
+                <use>standard</use>
+                <args>
+                    <module>Rest_Otp</module>
+                    <frontName>otp</frontName>
+                </args>
+            </otp>
+        </routers>
+        <layout>
+            <updates>
+                <otp>
+                    <file>otp.xml</file>
+                </otp>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<otp>
+				<use>admin</use>
+				<args>
+					<module>Rest_Otp</module>
+					<frontName>otp</frontName>
+				</args>
+			</otp>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<otp module="otp">
+				<title>Otp</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<items module="otp">
+						<title>Manage Items</title>
+						<sort_order>0</sort_order>
+						<action>otp/adminhtml_otp</action>
+					</items>
+				</children>
+			</otp>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<Rest_Otp>
+							<title>Otp Module</title>
+							<sort_order>10</sort_order>
+						</Rest_Otp>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<otp>
+					<file>otp.xml</file>
+				</otp>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <otp>
+                <class>Rest_Otp_Model</class>
+                <resourceModel>otp_mysql4</resourceModel>
+            </otp>
+            <otp_mysql4>
+                <class>Rest_Otp_Model_Mysql4</class>
+                <entities>
+                    <otp>
+                        <table>otp</table>
+                    </otp>
+                </entities>
+            </otp_mysql4>
+        </models>
+        <resources>
+            <otp_setup>
+                <setup>
+                    <module>Rest_Otp</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </otp_setup>
+            <otp_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </otp_write>
+            <otp_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </otp_read>
+        </resources>
+        <blocks>
+            <otp>
+                <class>Rest_Otp_Block</class>
+            </otp>
+        </blocks>
+        <helpers>
+            <otp>
+                <class>Rest_Otp_Helper</class>
+            </otp>
+        </helpers>
+    </global>
+</config>

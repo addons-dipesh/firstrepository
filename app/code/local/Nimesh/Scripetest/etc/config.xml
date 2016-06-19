@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category   Nimesh
+ * @package    Nimesh_Scripetest
+ * @author     ModuleCreator
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config>
+    <modules>
+        <Nimesh_Scripetest>
+            <version>0.1.0</version>
+        </Nimesh_Scripetest>
+    </modules>
+    <frontend>
+        <routers>
+            <scripetest>
+                <use>standard</use>
+                <args>
+                    <module>Nimesh_Scripetest</module>
+                    <frontName>scripetest</frontName>
+                </args>
+            </scripetest>
+        </routers>
+        <layout>
+            <updates>
+                <scripetest>
+                    <file>scripetest.xml</file>
+                </scripetest>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<scripetest>
+				<use>admin</use>
+				<args>
+					<module>Nimesh_Scripetest</module>
+					<frontName>scripetest</frontName>
+				</args>
+			</scripetest>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<scripetest module="scripetest">
+				<title>Scripetest</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<items module="scripetest">
+						<title>Manage Items</title>
+						<sort_order>0</sort_order>
+						<action>scripetest/adminhtml_scripetest</action>
+					</items>
+				</children>
+			</scripetest>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<Nimesh_Scripetest>
+							<title>Scripetest Module</title>
+							<sort_order>10</sort_order>
+						</Nimesh_Scripetest>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<scripetest>
+					<file>scripetest.xml</file>
+				</scripetest>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <scripetest>
+                <class>Nimesh_Scripetest_Model</class>
+                <resourceModel>scripetest_mysql4</resourceModel>
+            </scripetest>
+            <scripetest_mysql4>
+                <class>Nimesh_Scripetest_Model_Mysql4</class>
+                <entities>
+                    <scripetest>
+                        <table>scripetest</table>
+                    </scripetest>
+                </entities>
+            </scripetest_mysql4>
+        </models>
+        <resources>
+            <scripetest_setup>
+                <setup>
+                    <module>Nimesh_Scripetest</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </scripetest_setup>
+            <scripetest_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </scripetest_write>
+            <scripetest_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </scripetest_read>
+        </resources>
+        <blocks>
+            <scripetest>
+                <class>Nimesh_Scripetest_Block</class>
+            </scripetest>
+        </blocks>
+        <helpers>
+            <scripetest>
+                <class>Nimesh_Scripetest_Helper</class>
+            </scripetest>
+        </helpers>
+    </global>
+</config>

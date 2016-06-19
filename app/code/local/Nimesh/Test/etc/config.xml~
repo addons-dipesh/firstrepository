@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<config>
+    <global>
+        <modules>
+            <nimesh_test>
+                <version>0.1.0</version>
+            </nimesh_test>
+        </modules>
+        <blocks>
+            <test>
+                <rewrite>
+                    <test>Nimesh_Test_Block_Test</test>
+                </rewrite>
+            </test>
+        </blocks>
+    </global>
+    <frontend>
+        <routers>
+            <test>standard</test>
+            <args>
+                <module>Nimesh_Test</module>
+                <frontName>test</frontName>
+            </args>
+        </routers>
+        <layout>
+            <updates>
+                <test>
+                    <file>test.xml</file>
+                </test>
+            </updates>
+        </layout>
+    </frontend>
+</config>
+
